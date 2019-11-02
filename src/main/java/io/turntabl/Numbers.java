@@ -6,7 +6,7 @@ public class Numbers {
     }
 
     private static boolean greaterThanZero(int i){
-        return i < 0;
+        return i > 0;
     }
 
     private static boolean lessThanAThousand(int i){
