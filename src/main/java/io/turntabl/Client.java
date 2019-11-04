@@ -4,11 +4,13 @@ public class Client {
     private String name;
     private int id;
     ServiceLevel serviceLevel;
+   ClientType clientType;
 
-    public Client(String name, int id, ServiceLevel serviceLevel) {
+    public Client(String name, int id, ServiceLevel serviceLevel, ClientType clientType) {
         this.name = name;
         this.id = id;
         this.serviceLevel = serviceLevel;
+        this.clientType = clientType;
     }
 
     public String getName() {
