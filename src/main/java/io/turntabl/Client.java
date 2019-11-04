@@ -11,5 +11,15 @@ public class Client {
         this.serviceLevel = serviceLevel;
     }
 
+    public String getName() {
+        return this.name;
+    }
 
+    public int getId() {
+        return this.id;
+    }
+
+    public ServiceLevel getServiceLevel() {
+        return serviceLevel;
+    }
 }
