@@ -13,6 +13,10 @@ public class Client {
         this.clientType = clientType;
     }
 
+    public ClientType getClientType() {
+        return clientType;
+    }
+
     public String getName() {
         return this.name;
     }

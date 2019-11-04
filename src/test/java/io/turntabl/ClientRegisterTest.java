@@ -19,8 +19,8 @@ class ClientRegisterTest {
                 new Client("debby", 1234, ServiceLevel.PLATINUM, ClientType.CORPORATE),
 
         ));
-
-        List<String> contactNames = clientRegister.str
+        String expected = "john, yaa";
+        assertEquals(expected, clientRegister.goldClients());
     }
 }
 

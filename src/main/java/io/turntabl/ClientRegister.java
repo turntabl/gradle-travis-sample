@@ -3,7 +3,9 @@ package io.turntabl;
 import jdk.internal.ref.Cleaner;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
 import java.util.stream.Collectors;
 
 public class ClientRegister {
@@ -18,10 +20,16 @@ public class ClientRegister {
         return clients;
     }
 
+    
     public List<String> goldClients(){
-        List<String> contactNames = clients.stream().map(c -> c.serviceLevel.equals(ServiceLevel.PLATINUM)).collect(Collectors.toList());
-        List<String> cn = clients.stream().map(n -> n.getName())
-                .filter().collect(Collectors.toList());
-        return cn;
+        List<String> GoldClientNames = clients.stream()
+                .filter(n -> n.getServiceLevel().equals(ServiceLevel.GOLD))
+                .map(n -> n.getName())
+                .collect(Collectors.toList());
+        return GoldClientNames;
     }
+
+
+
+
 }
