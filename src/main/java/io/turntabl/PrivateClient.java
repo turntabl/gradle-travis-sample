@@ -7,7 +7,8 @@ public class PrivateClient extends Client implements ContactName{
     }
 
     @Override
-    public void getContactName() {
+    public String getContactName() {
 
+        return null;
     }
 }

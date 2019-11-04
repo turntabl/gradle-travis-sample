@@ -1,6 +1,6 @@
 package io.turntabl;
 
-public class CorporateClient extends Client implements ContactName{
+public class CorporateClient extends Client {
 
     private AccountManager accountManager;
 
@@ -8,8 +8,4 @@ public class CorporateClient extends Client implements ContactName{
         super(name, id, serviceLevel);
     }
 
-    @Override
-    public void getContactName() {
-
-    }
 }
