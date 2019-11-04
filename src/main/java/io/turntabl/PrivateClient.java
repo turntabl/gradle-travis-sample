@@ -6,9 +6,9 @@ public class PrivateClient extends Client implements ContactName{
         super(name, id, serviceLevel);
     }
 
+
     @Override
     public String getContactName() {
-
         return null;
     }
 }
