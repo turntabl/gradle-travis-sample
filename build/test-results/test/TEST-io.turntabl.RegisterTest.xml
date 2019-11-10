@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.turntabl.RegisterTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-11-10T18:50:00" hostname="agyen" time="0.015">
+  <properties/>
+  <testcase name="testGetGoldList_Empty" classname="io.turntabl.RegisterTest" time="0.008"/>
+  <testcase name="testForAllClients" classname="io.turntabl.RegisterTest" time="0.0"/>
+  <testcase name="testGetGoldList_notEmpty" classname="io.turntabl.RegisterTest" time="0.0"/>
+  <testcase name="testGetClientById_Available" classname="io.turntabl.RegisterTest" time="0.002"/>
+  <testcase name="testGetClientById_NotAvailable" classname="io.turntabl.RegisterTest" time="0.0"/>
+  <testcase name="testForNumberOfClientsAtEachLevel" classname="io.turntabl.RegisterTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

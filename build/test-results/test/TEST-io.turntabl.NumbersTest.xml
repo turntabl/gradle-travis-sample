@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="io.turntabl.NumbersTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2019-11-10T18:50:00" hostname="agyen" time="0.004">
+  <properties/>
+  <testcase name="testGreaterThanAThousand" classname="io.turntabl.NumbersTest" time="0.002"/>
+  <testcase name="testAThousand" classname="io.turntabl.NumbersTest" time="0.0"/>
+  <testcase name="testZero" classname="io.turntabl.NumbersTest" time="0.0"/>
+  <testcase name="testLessThanZero" classname="io.turntabl.NumbersTest" time="0.0"/>
+  <testcase name="testGreaterThanZero" classname="io.turntabl.NumbersTest" time="0.0"/>
+  <testcase name="testLessThanAThousand" classname="io.turntabl.NumbersTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
