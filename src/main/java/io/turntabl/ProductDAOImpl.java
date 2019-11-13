@@ -38,7 +38,7 @@ public class ProductDAOImpl implements ProductDAO {
 //                        result.getString("products.unit_price")
 //                );
 
-                ProductTO pto = new ProductTO(result.getString("product_name"));
+                ProductTO pto = new ProductTO(result.getString("product_name"), result.getDouble("unit_price"));    // the exact col name ....not order_details.unit_price
 //                System.out.println();
                 allProds.add(pto);
             }
