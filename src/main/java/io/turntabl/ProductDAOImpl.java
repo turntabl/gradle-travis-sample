@@ -16,11 +16,17 @@ public class ProductDAOImpl implements ProductDAO {
         List<ProductTO> allProds = new ArrayList<>();
 
         try (Connection db = DriverManager.getConnection(dbUrl, "john-erbynn", "turntabl")) {
-            PreparedStatement pst = db.prepareStatement("select product_name, products.unit_price from products " +
+//            PreparedStatement pst = db.prepareStatement("select product_name, order_details.unit_price from products " +
+//                    "inner join order_details on products.product_id = order_details.product_id " +
+//                    "inner join orders on order_details.order_id = orders.order_id" +
+//                    "inner join customers on orders.customer_id = customers.customer_id" +
+//                    "where customers.contact_name = ? ");
+
+            PreparedStatement pst = db.prepareStatement("select product_name, order_details.unit_price from products " +
                     "inner join order_details on products.product_id = order_details.product_id " +
-                    "inner join orders on order_details.order_id = orders.order_id" +
-                    "inner join customers on orders.customer_id = customers.customer_id" +
-                    "where contact_name = '?' ");
+                    "inner join orders on order_details.order_id = orders.order_id " +
+                    "inner join customers on orders.customer_id = customers.customer_id where customers.contact_name = ?");
+
             pst.clearParameters();
             pst.setString(1, customerName);   // => name matched to the first ?
 
