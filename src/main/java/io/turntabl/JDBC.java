@@ -113,7 +113,6 @@ public class JDBC {
         } catch (SQLException sqle) {
             System.err.println("Connection error: " + sqle);
         }
-
     }
 
     // TODO: create prepared statement for Product and Employee name searches
