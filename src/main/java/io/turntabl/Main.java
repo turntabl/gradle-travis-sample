@@ -13,8 +13,11 @@ public class Main {
         String name = inp.nextLine();
         jdbc.searchCustomerName(name);*/
 
-        jdbc.searchCategoryByName("Beverages");
+//        jdbc.searchCategoryByName("Beverages");
 //        jdbc.searchCategoryByName();
+
+        ProductDAOImpl productDAO = new ProductDAOImpl();
+        productDAO.showAllProductsByCustomer("Karin Josephs");
 
 
     }
