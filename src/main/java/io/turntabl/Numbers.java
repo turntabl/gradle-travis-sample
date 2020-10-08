@@ -12,4 +12,6 @@ public class Numbers {
     private static boolean lessThanAThousand(int i){
         return i < 1000;
     }
+
+    //adding some comments
 }
