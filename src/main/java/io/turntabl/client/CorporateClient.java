@@ -14,6 +14,11 @@ public class CorporateClient extends Client {
     }
 
     @Override
+    public void setName(String name) {
+       accountManager.setName(name);
+    }
+
+    @Override
     public String toString() {
         return "Corporate{" +
                 "name='" + getName() + '\'' +
