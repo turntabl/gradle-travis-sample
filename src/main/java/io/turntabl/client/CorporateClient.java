@@ -1,9 +1,9 @@
 package io.turntabl.client;
 
-public class Corporate extends Client {
+public class CorporateClient extends Client {
     private AccountManager accountManager;
 
-    public Corporate(AccountManager accountManager, ServiceLevel serviceLevel) {
+    public CorporateClient(AccountManager accountManager, ServiceLevel serviceLevel) {
         super(serviceLevel);
         this.accountManager = accountManager;
     }
