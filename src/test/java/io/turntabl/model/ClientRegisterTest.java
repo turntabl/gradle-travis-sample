@@ -74,7 +74,6 @@ class ClientRegisterTest {
         assertEquals(4, countOfGoldClients, "GOLD ServiceLevel has a total of" + countOfGoldClients + ": clients");
         assertEquals(4, countOfPlatinumClients, "PLATINUM ServiceLevel has a total of :" + countOfPlatinumClients + ": clients");
         assertEquals(2, countOfPremiumClients, "PREMIUM ServiceLevel has a total of :" + countOfPremiumClients + ": clients");
-
         System.out.println(serviceLevelCountMap);
     }
 }
