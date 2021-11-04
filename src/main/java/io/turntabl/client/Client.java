@@ -7,9 +7,13 @@ public abstract class Client {
     private final String ID = UUID.randomUUID().toString();
     private ServiceLevel serviceLevel;
 
-    public Client(String name, ServiceLevel serviceLevel) {
-        this.name = name;
+    public Client(ServiceLevel serviceLevel) {
         this.serviceLevel = serviceLevel;
+    }
+
+    public Client(String name, ServiceLevel serviceLevel) {
+        this(serviceLevel);
+        this.name = name;
     }
 
     public String getName() {
