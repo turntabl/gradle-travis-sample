@@ -15,8 +15,8 @@ public class ClientRegister {
       return clientList;
    }
 
-   public List<String> getGoldClientsNames(){
-      return this.clientList.stream().filter(client -> client.getServiceLevel().equals(Service.GOLD))
+   public List<String> getClientsNamesBasedOnService(Service service){
+      return this.clientList.stream().filter(client -> client.getServiceLevel().equals(service))
               .map(Client::getName)
               .collect(Collectors.toList());
    }
