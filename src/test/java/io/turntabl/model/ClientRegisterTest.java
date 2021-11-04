@@ -71,6 +71,10 @@ class ClientRegisterTest {
         long countOfPremiumClients = serviceLevelCountMap.get(ServiceLevel.PREMIUM);
 
         assertFalse(serviceLevelCountMap.isEmpty());
+        assertEquals(4, countOfGoldClients);
+        assertEquals(4, countOfPlatinumClients);
+        assertEquals(2, countOfPremiumClients);
+
         assertNotNull(countOfGoldClients, "GOLD ServiceLevel has a total of :" + countOfGoldClients + ": clients");
         assertNotNull(countOfPlatinumClients, "PLATINUM ServiceLevel has a total of :" + countOfPlatinumClients + ": clients");
         assertNotNull(countOfPremiumClients, "PREMIUM ServiceLevel has a total of :" + countOfPremiumClients + ": clients");
