@@ -12,5 +12,5 @@ public interface ClientRegisterService {
 
     List<String> getContactNamesListOfGoldClients();
 
-    Map<ServiceLevel, Integer> countOfClientsAtEveryServiceLevel();
+    Map<ServiceLevel, Long> countOfClientsAtEveryServiceLevel();
 }

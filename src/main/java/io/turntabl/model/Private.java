@@ -4,34 +4,24 @@ import io.turntabl.enums.ServiceLevel;
 
 public class Private extends Client {
 
-    private String ID;
     private String name;
-    private ServiceLevel serviceLevel;
 
     public Private(String ID, String name, ServiceLevel serviceLevel) {
-        this.ID = ID;
+        super(ID, serviceLevel);
         this.name = name;
-        this.serviceLevel = serviceLevel;
-    }
-
-    public String getID() {
-        return ID;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public ServiceLevel getServiceLevel() {
-        return serviceLevel;
-    }
-
-    public void setServiceLevel(ServiceLevel serviceLevel) {
-        this.serviceLevel = serviceLevel;
     }
 
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public String toString() {
+        return "Client{" +
+                "ID='" + getID() + '\'' +
+                ", name='" + name + '\'' +
+                ", serviceLevel=" + getServiceLevel() +
+                '}';
     }
 }

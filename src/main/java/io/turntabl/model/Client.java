@@ -5,12 +5,10 @@ import io.turntabl.enums.ServiceLevel;
 public abstract class Client {
 
     private String ID;
-    private String name;
     private ServiceLevel serviceLevel;
 
-    public Client(String ID, String name, ServiceLevel serviceLevel) {
+    public Client(String ID, ServiceLevel serviceLevel) {
         this.ID = ID;
-        this.name = name;
         this.serviceLevel = serviceLevel;
     }
 
@@ -20,15 +18,15 @@ public abstract class Client {
         return ID;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public ServiceLevel getServiceLevel() {
         return serviceLevel;
     }
 
-    public void setServiceLevel(ServiceLevel serviceLevel) {
-        this.serviceLevel = serviceLevel;
+    @Override
+    public String toString() {
+        return "Client{" +
+                "ID='" + ID + '\'' +
+                ", serviceLevel=" + serviceLevel +
+                '}';
     }
 }
