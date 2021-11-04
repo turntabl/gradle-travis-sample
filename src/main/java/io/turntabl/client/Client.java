@@ -2,12 +2,26 @@ package io.turntabl.client;
 
 import java.util.UUID;
 
-public class Client {
+public abstract class Client {
+    private String name;
     private final String ID = UUID.randomUUID().toString();
     private ServiceLevel serviceLevel;
 
     public Client(ServiceLevel serviceLevel) {
         this.serviceLevel = serviceLevel;
+    }
+
+    public Client(String name, ServiceLevel serviceLevel) {
+        this(serviceLevel);
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getID() {
@@ -21,12 +35,5 @@ public class Client {
     public void setServiceLevel(ServiceLevel serviceLevel) {
         this.serviceLevel = serviceLevel;
     }
-
-    @Override
-    public String toString() {
-        return "Client{" +
-                "ID='" + ID + '\'' +
-                ", serviceLevel=" + serviceLevel +
-                '}';
-    }
 }
+
