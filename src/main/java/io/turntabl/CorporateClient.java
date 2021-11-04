@@ -1,6 +1,7 @@
 package io.turntabl;
 
 public class CorporateClient extends Client{
+    AccountManager accountManager;
 
     public CorporateClient(String name, int id, ServiceLevel serviceLevel) {
         super(name, id, serviceLevel);
@@ -8,7 +9,7 @@ public class CorporateClient extends Client{
 
     @Override
     public String getName() {
-        return super.getName();
+        return accountManager.getName();
     }
 
     @Override
