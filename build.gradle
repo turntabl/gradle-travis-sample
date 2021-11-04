@@ -14,12 +14,17 @@ repositories {
 }
 
 dependencies {
-    implementation  group: 'junit', name: 'junit', version: '4.12'
+    testImplementation  group: 'junit', name: 'junit', version: '4.12'
 }
-
-application {
-    mainClassName = 'io.turntabl.TCMS'
+test {
+    useJUnit()
 }
+//task junit {
+//    print "JUnit in Action"
+//}
+//application {
+//    mainClassName = 'io.turntabl.TCMS'
+//}
 
 //this will build a start script in
 tasks.startScripts {
@@ -31,5 +36,5 @@ tasks.startScripts {
 
 //put your package-qualified main class name here
 application {
-    mainClassName = 'io.turntabl.TCMS'
+    mainClass.set("io.turntabl.TCMS")
 }
