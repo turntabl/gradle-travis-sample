@@ -8,6 +8,9 @@ public class NumbersTest {
 
     @Test
     public void testLessThanZero() {
+
+
+        System.out.println("Running the first test");
         boolean result = Numbers.isGreaterThanZeroAndLessThanAThousand(-1);
         assertFalse(result);
     }
