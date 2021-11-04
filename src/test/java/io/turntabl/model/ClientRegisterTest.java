@@ -26,7 +26,7 @@ class ClientRegisterTest {
         clientList.add(new Private("C-5", "Marvel Cinematic Universe", ServiceLevel.GOLD));
         clientList.add(new Corporate("C-6", "Facebook", ServiceLevel.PREMIUM, new AccountManager("Mark Zuckerberg")));
         clientList.add(new Private("C-7", "Amazon", ServiceLevel.PLATINUM));
-        clientList.add(new Corporate("C-8", "K-Ofori & Sons", ServiceLevel.GOLD, new AccountManager("Judith Serwaa Ofosu - alias: Table-Mate")));
+        clientList.add(new Corporate("C-8", "K-Ofori & Sons", ServiceLevel.GOLD, new AccountManager("Judith Serwaa Ofosu")));
         clientList.add(new Private("C-9", "Alibaba", ServiceLevel.PLATINUM));
         clientList.add(new Corporate("C-10", "Turntabl", ServiceLevel.PLATINUM, new AccountManager("Sam Moore")));
         clientRegister = new ClientRegister(clientList);
@@ -52,15 +52,16 @@ class ClientRegisterTest {
         expectedNamesList.add("Judith & Daughters");
         expectedNamesList.add("Louis Incorporated");
         expectedNamesList.add("Marvel Cinematic Universe");
-        expectedNamesList.add("Judith Serwaa Ofosu - alias: Table-Mate");
+        expectedNamesList.add("Judith Serwaa Ofosu");
         assertLinesMatch(expectedNamesList, contactNamesListOfGoldClients);
         System.out.println(contactNamesListOfGoldClients);
     }
 
     @Test
     void checkGetClientNameById() {
-        Optional<String> optionalClientName = clientRegister.getClientNameById("C-1");
-        assertNotNull(optionalClientName.get());
+        Optional<String> optionalClientName = clientRegister.getClientNameById("C-8");
+        assertEquals("Judith Serwaa Ofosu", optionalClientName.get());
+        System.out.println(optionalClientName.get());
     }
 
     @Test
@@ -70,14 +71,9 @@ class ClientRegisterTest {
         long countOfPlatinumClients = serviceLevelCountMap.get(ServiceLevel.PLATINUM);
         long countOfPremiumClients = serviceLevelCountMap.get(ServiceLevel.PREMIUM);
 
-        assertFalse(serviceLevelCountMap.isEmpty());
-        assertEquals(4, countOfGoldClients);
-        assertEquals(4, countOfPlatinumClients);
-        assertEquals(2, countOfPremiumClients);
-
-        assertNotNull(countOfGoldClients, "GOLD ServiceLevel has a total of :" + countOfGoldClients + ": clients");
-        assertNotNull(countOfPlatinumClients, "PLATINUM ServiceLevel has a total of :" + countOfPlatinumClients + ": clients");
-        assertNotNull(countOfPremiumClients, "PREMIUM ServiceLevel has a total of :" + countOfPremiumClients + ": clients");
+        assertEquals(4, countOfGoldClients, "GOLD ServiceLevel has a total of" + countOfGoldClients + ": clients");
+        assertEquals(4, countOfPlatinumClients, "PLATINUM ServiceLevel has a total of :" + countOfPlatinumClients + ": clients");
+        assertEquals(2, countOfPremiumClients, "PREMIUM ServiceLevel has a total of :" + countOfPremiumClients + ": clients");
 
         System.out.println(serviceLevelCountMap);
     }
