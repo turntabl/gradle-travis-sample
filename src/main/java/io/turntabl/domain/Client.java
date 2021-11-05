@@ -13,4 +13,8 @@ public abstract class Client {
     public ServiceLevel getServiceLevel() {
         return serviceLevel;
     }
+
+    public String getID() {
+        return ID;
+    }
 }

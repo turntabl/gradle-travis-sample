@@ -4,7 +4,7 @@ public class CorporateClient extends Client{
     private final CorporateClient.AccountManager accountManager;
 
     public CorporateClient(String name, String ID, ServiceLevel serviceLevel) {
-        super(ID, serviceLevel);
+        super(ID + "COP", serviceLevel);
         accountManager = new AccountManager(name);
     }
 

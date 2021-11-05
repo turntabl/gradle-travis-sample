@@ -28,7 +28,11 @@ public class RegisterServiceImpl implements RegisterService {
 
     @Override
     public Optional<String> getClientNameById(String clientId) {
-        return Optional.empty();
+        return this.clients
+                .stream()
+                .filter(client -> client.getID().equalsIgnoreCase(clientId))
+                .findFirst()
+                .map(Client::getName);
     }
 
     @Override
