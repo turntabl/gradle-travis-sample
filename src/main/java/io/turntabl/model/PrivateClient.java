@@ -2,11 +2,11 @@ package io.turntabl.model;
 
 import io.turntabl.enums.ServiceLevel;
 
-public class Private extends Client {
+public class PrivateClient extends Client {
 
     private String name;
 
-    public Private(String ID, String name, ServiceLevel serviceLevel) {
+    public PrivateClient(String ID, String name, ServiceLevel serviceLevel) {
         super(ID, serviceLevel);
         this.name = name;
     }
