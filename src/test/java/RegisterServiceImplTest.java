@@ -2,18 +2,24 @@ import io.turntabl.domain.Client;
 import io.turntabl.domain.CorporateClient;
 import io.turntabl.domain.PrivateClient;
 import io.turntabl.domain.ServiceLevel;
+import io.turntabl.service.RegisterService;
 import io.turntabl.service.impl.RegisterServiceImpl;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.runners.MockitoJUnitRunner;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
+@RunWith(MockitoJUnitRunner.class)
 public class RegisterServiceImplTest {
+    @Mock
+    private RegisterService registerService;
     private RegisterServiceImpl registerServiceImpl;
 
     @Before
@@ -32,6 +38,8 @@ public class RegisterServiceImplTest {
     }
     @Test
     public void getContactNames() {
+        Mockito.when(registerService.getContactNames(ServiceLevel.GOLD))
+                        .thenReturn(List.of("ECG", "FIDELITY BANK"));
         assertEquals("Only ECG and FIDELITY clients belong to the gold Service",
                 registerServiceImpl.getContactNames(ServiceLevel.GOLD), List.of("ECG", "FIDELITY BANK"));
 
