@@ -35,7 +35,6 @@ public class RegisterServiceImplTest {
 
     @Test
     public void getClientNameById() {
-        System.out.println(registerServiceImpl.getClientNameById("23PVT").get());
        assertEquals(registerServiceImpl.getClientNameById("2332COP").get(), "ECG");
     }
 

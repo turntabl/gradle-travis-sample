@@ -8,6 +8,7 @@ group 'io.turntabl'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+targetCompatibility = '16.0.2'
 
 repositories {
     mavenCentral()
@@ -19,12 +20,6 @@ dependencies {
 test {
     useJUnit()
 }
-//task junit {
-//    print "JUnit in Action"
-//}
-//application {
-//    mainClassName = 'io.turntabl.TCMS'
-//}
 
 //this will build a start script in
 tasks.startScripts {

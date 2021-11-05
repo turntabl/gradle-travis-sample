@@ -4,11 +4,9 @@ import io.turntabl.domain.Client;
 import io.turntabl.domain.ServiceLevel;
 import io.turntabl.service.RegisterService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class RegisterServiceImpl implements RegisterService {
     private final List<Client> clients;
