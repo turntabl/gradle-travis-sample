@@ -19,12 +19,6 @@ dependencies {
 test {
     useJUnit()
 }
-//task junit {
-//    print "JUnit in Action"
-//}
-//application {
-//    mainClassName = 'io.turntabl.TCMS'
-//}
 
 //this will build a start script in
 tasks.startScripts {
