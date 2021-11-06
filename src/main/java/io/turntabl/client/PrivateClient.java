@@ -8,9 +8,9 @@ public class PrivateClient extends Client {
     @Override
     public String toString() {
         return "Private{" +
-                "name='" + super.getName() + '\'' +
-                ", ID='" + super.getID() + '\'' +
-                ", serviceLevel=" + super.getServiceLevel() +
+                "name='" + getName() + '\'' +
+                ", ID='" + getID() + '\'' +
+                ", serviceLevel=" + getServiceLevel() +
                 '}';
     }
 }
