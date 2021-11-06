@@ -11,4 +11,11 @@ public class PrivateClient extends Client{
     public String getName() {
         return this.name;
     }
+
+    @Override
+    public String toString() {
+        return "PrivateClient{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }

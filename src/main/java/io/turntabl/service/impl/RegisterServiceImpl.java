@@ -2,17 +2,25 @@ package io.turntabl.service.impl;
 
 import io.turntabl.domain.Client;
 import io.turntabl.domain.ServiceLevel;
+import io.turntabl.exceptions.ClientNotFoundException;
 import io.turntabl.service.RegisterService;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class RegisterServiceImpl implements RegisterService {
-    private final List<Client> clients;
-
-    public RegisterServiceImpl(List<Client> clients) {
-        this.clients = clients;
+    private  List<Client> clients;
+    private final RegisterService registerService;
+//
+//    This is for the normal tests.
+//    public RegisterServiceImpl(List<Client> clients) {
+//        this.clients = clients;
+//    }
+//    This helps with mockito
+    public RegisterServiceImpl(RegisterService registerService) {
+        this.registerService = registerService;
     }
 
     @Override
@@ -21,20 +29,39 @@ public class RegisterServiceImpl implements RegisterService {
                 .stream()
                 .filter(client -> client.getServiceLevel() == serviceLevel)
                 .map(Client::getName)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Override
-    public Optional<String> getClientNameById(String clientId) {
+    public String getClientNameById(String clientId) throws ClientNotFoundException {
         return this.clients
                 .stream()
                 .filter(client -> client.getID().equalsIgnoreCase(clientId))
                 .findFirst()
-                .map(Client::getName);
+                .map(Client::getName)
+                .orElseThrow(() -> new ClientNotFoundException("Client does not exist"));
     }
 
     @Override
-    public Map<ServiceLevel, Integer> countClients() {
-        return null;
+    public Map<ServiceLevel, Long> countClientsPerServiceLevel() {
+        System.out.println(this.clients
+                .stream()
+                .collect(Collectors.groupingBy(Client::getServiceLevel, Collectors.counting())));
+        return this.clients
+                .stream()
+                .collect(Collectors.groupingBy(Client::getServiceLevel, Collectors.counting()));
+
+
+    }
+
+    @Override
+    public String toString() {
+        return "RegisterServiceImpl{" +
+                "clients=" + clients +
+                '}';
+    }
+
+    public void setClients(List<Client> clients) {
+        this.clients = clients;
     }
 }

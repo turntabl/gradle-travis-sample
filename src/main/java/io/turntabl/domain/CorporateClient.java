@@ -15,6 +15,13 @@ public class CorporateClient extends Client{
         return accountManager.getName();
     }
 
+    @Override
+    public String toString() {
+        return "CorporateClient{" +
+                "accountManager=" + accountManager +
+                '}';
+    }
+
     static class AccountManager {
         private final String name;
 
@@ -26,5 +33,11 @@ public class CorporateClient extends Client{
             return name;
         }
 
+        @Override
+        public String toString() {
+            return "AccountManager{" +
+                    "name='" + name + '\'' +
+                    '}';
+        }
     }
 }

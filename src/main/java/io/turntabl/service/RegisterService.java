@@ -1,6 +1,7 @@
 package io.turntabl.service;
 
 import io.turntabl.domain.ServiceLevel;
+import io.turntabl.exceptions.ClientNotFoundException;
 
 import javax.swing.text.html.Option;
 import java.util.List;
@@ -9,6 +10,6 @@ import java.util.Optional;
 
 public interface RegisterService {
     List<String> getContactNames(ServiceLevel serviceLevel);
-    Optional<String> getClientNameById(String clientId);
-    Map<ServiceLevel, Integer> countClients();
+    String getClientNameById(String clientId) throws ClientNotFoundException;
+    Map<ServiceLevel, Long> countClientsPerServiceLevel();
 }

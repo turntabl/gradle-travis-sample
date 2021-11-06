@@ -8,14 +8,16 @@ group 'io.turntabl'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
-//targetCompatibility = '16.0.2'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation 'org.mockito:mockito-all:1.10.19'
     testImplementation  group: 'junit', name: 'junit', version: '4.12'
+//    implementation group: 'org.mockito', name: 'junit', version: '4.12'
+
 }
 test {
     useJUnit()
