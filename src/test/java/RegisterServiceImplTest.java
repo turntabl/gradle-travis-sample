@@ -59,7 +59,7 @@ public class RegisterServiceImplTest {
     @Test(expected = ClientNotFoundException.class)
     public void getClientNameByIdThrows() throws ClientNotFoundException {
         when(registerService.getClientNameById("2332"))
-                .thenThrow(new ClientNotFoundException("Client not found"));
+                .thenThrow(new ClientNotFoundException());
 //        assertEquals(registerServiceImpl.getClientNameById("2332"), "ECG");
     }
 

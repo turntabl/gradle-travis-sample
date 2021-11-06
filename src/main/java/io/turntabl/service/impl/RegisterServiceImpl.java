@@ -39,7 +39,7 @@ public class RegisterServiceImpl implements RegisterService {
                 .filter(client -> client.getID().equalsIgnoreCase(clientId))
                 .findFirst()
                 .map(Client::getName)
-                .orElseThrow(() -> new ClientNotFoundException("Client does not exist"));
+                .orElseThrow(ClientNotFoundException::new);
     }
 
     @Override
