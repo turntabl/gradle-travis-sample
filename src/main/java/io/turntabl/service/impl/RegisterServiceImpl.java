@@ -44,9 +44,8 @@ public class RegisterServiceImpl implements RegisterService {
 
     @Override
     public Map<ServiceLevel, Long> countClientsPerServiceLevel() {
-        System.out.println(this.clients
-                .stream()
-                .collect(Collectors.groupingBy(Client::getServiceLevel, Collectors.counting())));
+
+
         return this.clients
                 .stream()
                 .collect(Collectors.groupingBy(Client::getServiceLevel, Collectors.counting()));
