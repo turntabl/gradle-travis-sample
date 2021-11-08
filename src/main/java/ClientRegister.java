@@ -10,7 +10,6 @@ public class ClientRegister {
    public ClientRegister(Client... client){
       this.clientList = new ArrayList<>(Arrays.asList(client));
    }
-
    public ArrayList<Client> getClientList() {
       return clientList;
    }

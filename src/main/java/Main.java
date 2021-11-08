@@ -10,5 +10,6 @@ public class Main {
         System.out.println(reg1.getClientsNamesBasedOnService(Service.PLATINUM));
         System.out.println(reg1.getClientNameById(1002));
         System.out.println(reg1.getClientCountBasedOnService());
+        
     }
 }
