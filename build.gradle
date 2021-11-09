@@ -14,11 +14,13 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-}
+    implementation 'org.mockito:mockito-all:1.10.19'
+    testImplementation  group: 'junit', name: 'junit', version: '4.12'
+//    implementation group: 'org.mockito', name: 'junit', version: '4.12'
 
-application {
-    mainClassName = 'io.turntabl.TCMS'
+}
+test {
+    useJUnit()
 }
 
 //this will build a start script in
@@ -31,5 +33,5 @@ tasks.startScripts {
 
 //put your package-qualified main class name here
 application {
-    mainClassName = 'io.turntabl.TCMS'
+    mainClass.set("io.turntabl.TCMS")
 }
